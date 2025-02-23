@@ -20,7 +20,7 @@ export const NewTabInput = (props: newTabInputProps) => {
 
   const [newTabName, setNewTabName] = useState("");
   const [isAddingTab, setIsAddingTab] = useState(false);
-  const inputTabElem = useRef(null);
+  const inputTabElem = useRef<HTMLInputElement>(null);
 
     const onClickAddingTab = useCallback(() => {
       setIsAddingTab(true);

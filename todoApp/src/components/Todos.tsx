@@ -1,8 +1,8 @@
 import { TodoItem } from "./TodoItem"
 import { NewTodoInput } from "./NewTodoInput"
-import { FaTrash } from "react-icons/fa"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { memo, useCallback } from 'react'
-
 
 type TodoItem = {
   name: string,
@@ -19,7 +19,8 @@ type TodosProps = {
   selectedTab: string
 }
 
-const TodosComponent = (props: TodosProps) => {
+const TodosComponent = (props: TodosProps) => { 
+
   const { tabs, setTabs, selectedTab } = props;
 
   const onToggleTodo = useCallback((index: number) => {
@@ -67,7 +68,7 @@ const TodosComponent = (props: TodosProps) => {
             mt-2
             mr-2
           ' >
-          <FaTrash size={25}/></button>
+          <FontAwesomeIcon icon={faTrash} /></button> 
         </div>
       </ul>
     </div>
