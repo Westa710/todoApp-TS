@@ -1,17 +1,9 @@
 import { useState, useRef, useCallback } from 'react';
-
-type TodoItem = {
-  name: string,
-  completed: boolean
-}
-
-type Tabs = {
-  [key: string]: TodoItem[]
-}
+import { TabsType } from './types/Tabs.type'
 
 type newTabInputProps = {
-  tabs: Tabs,
-  setTabs: (tabs: Tabs) => void,
+  tabs: TabsType,
+  setTabs: (tabs: TabsType) => void,
   setSelectedTab: (tab: string) => void
 }
 
@@ -25,8 +17,7 @@ export const NewTabInput = (props: newTabInputProps) => {
     const onClickAddingTab = useCallback(() => {
       setIsAddingTab(true);
       setTimeout(() => {
-        inputTabElem.current?.focus();
-        // Todo inputTabElemのnullチェック 
+        inputTabElem.current?.focus(); 
       }, 0);
     }, []);
     

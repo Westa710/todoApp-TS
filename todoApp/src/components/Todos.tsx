@@ -3,19 +3,12 @@ import { NewTodoInput } from "./NewTodoInput"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { memo, useCallback } from 'react'
+import { TabsType } from './types/Tabs.type'
 
-type TodoItem = {
-  name: string,
-  completed: boolean
-}
-
-type Tabs = {
-  [key: string]: TodoItem[]
-}
 
 type TodosProps = {
-  tabs: Tabs,
-  setTabs: (tabs: Tabs) => void,
+  tabs: TabsType,
+  setTabs: (tabs: TabsType) => void,
   selectedTab: string
 }
 

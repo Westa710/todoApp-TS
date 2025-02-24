@@ -1,14 +1,7 @@
-type TodoItem = {
-  name: string,
-  completed: boolean
-}
-
-type Tabs = {
-  [key: string]: TodoItem[]
-}
+import { TabsType } from './types/Tabs.type'
 
 type TodoItemProps = {
-  tabs: Tabs,
+  tabs: TabsType,
   selectedTab: string,
   onToggleTodo: (index: number) => void
 }

@@ -1,19 +1,11 @@
 import { TabItem } from './TabItem'
 import { NewTabInput } from './NewTabInput';
 import { memo, useCallback } from 'react'
-
-type TodoItem = {
-  name: string,
-  completed: boolean
-}
-
-type Tabs = {
-  [key: string]: TodoItem[]
-}
+import { TabsType } from './types/Tabs.type'
 
 type TabsProps = {
-  tabs: Tabs,
-  setTabs: (tabs: Tabs) => void,
+  tabs: TabsType,
+  setTabs: (tabs: TabsType) => void,
   selectedTab: string,
   setSelectedTab: (tab: string) => void
 }
@@ -27,7 +19,7 @@ const TabsComponent = (props: TabsProps) => {
     setSelectedTab(tab);
   }, [setSelectedTab]);
 
-  const onClickDeleteTab = useCallback((tabName: keyof Tabs) => {
+  const onClickDeleteTab = useCallback((tabName: keyof TabsType) => {
     const ifTabHasUncompletedTodo = tabs[tabName].some((tab) => {
       return tab.completed === false;
     })

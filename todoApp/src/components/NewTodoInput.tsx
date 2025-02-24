@@ -1,18 +1,11 @@
 import { useCallback, useState } from 'react'
+import { TabsType } from './types/Tabs.type'
 
-type TodoItem = {
-  name: string,
-  completed: boolean
-}
-
-type Tabs = {
-  [key: string]: TodoItem[]
-}
 
 type NewTodoInputProps = {
-  tabs: Tabs,
+  tabs: TabsType,
   selectedTab: string,
-  setTabs: (tabs: Tabs) => void
+  setTabs: (tabs: TabsType) => void
 }
 
 export const NewTodoInput = (props: NewTodoInputProps) => {
